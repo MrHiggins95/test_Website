@@ -1,181 +1,235 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wukong - The Victorious Fighting Buddha</title>
   <style>
-  
-  .bn632-hover {
-  width: 160px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #fff;
-  cursor: pointer;
-  margin: 20px;
-  height: 55px;
-  text-align:center;
-  border: none;
-  background-size: 300% 100%;
-  border-radius: 50px;
-  moz-transition: all .4s ease-in-out;
-  -o-transition: all .4s ease-in-out;
-  -webkit-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out;
-}
+    /* General Styling */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-image: linear-gradient(rgb(88, 16, 153), rgb(248, 226, 7));
+      color: #333;
+      min-height: 100vh;
+    }
 
-.bn632-hover:hover {
-  background-position: 100% 0;
-  moz-transition: all .4s ease-in-out;
-  -o-transition: all .4s ease-in-out;
-  -webkit-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out;
-}
+    h1, h2 {
+      color: rgb(93, 34, 23);
+    }
 
-.bn632-hover:focus {
-  outline: none;
-}
+    p {
+      text-align: justify;
+      margin: 20px auto;
+      max-width: 800px;
+      line-height: 1.8;
+    }
 
-.bn632-hover.bn20 {
-  background-image: linear-gradient(
-    to right,
-    #667eea,
-    #764ba2,
-    #6b8dd6,
-    #8e37d7
-  );
-  box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
-}
-  
-  
-     body{
-         text-align: center;
-         background-image: linear-gradient(rgb(88, 16, 153),rgb(248, 226, 7),rgb(248, 226, 7));
-         min-width: 100%;
-         min-height: 100%;
-      }
-      h1{
-         background-image: linear-gradient(rgb(55, 54, 42),rgb(248, 226, 7));
-         color: rgb(93,34,23);
-      }
-      .button {
-  background-color: #8700ff;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-.bn5 {
-  padding: 0.6em 2em;
-  border: none;
-  outline: none;
-  color: rgb(255, 255, 255);
-  background: #111;
-  cursor: pointer;
-  position: relative;
-  z-index: 0;
-  border-radius: 10px;
-}
+    /* Navbar Styling */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #333;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
 
-.bn5:before {
-  content: "";
-  background: linear-gradient(
-    45deg,
-    #ff0000,
-    #ff7300,
-    #fffb00,
-    #48ff00,
-    #00ffd5,
-    #002bff,
-    #7a00ff,
-    #ff00c8,
-    #ff0000
-  );
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  background-size: 400%;
-  z-index: -1;
-  filter: blur(5px);
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  animation: glowingbn5 20s linear infinite;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  border-radius: 10px;
-}
+    .navbar a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+      font-size: 1rem;
+    }
 
-@keyframes glowingbn5 {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 400% 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
-}
+    .navbar a:hover {
+      background-color: #575757;
+    }
 
-.bn5:active {
-  color: #000;
-}
+    .navbar a.active {
+      background-color: #04AA6D;
+    }
 
-.bn5:active:after {
-  background: transparent;
-}
+    .content {
+      padding: 100px 20px;
+    }
 
-.bn5:hover:before {
-  opacity: 1;
-}
+    img {
+      max-width: 90%;
+      height: auto;
+      margin: 20px 0;
+    }
 
-.bn5:after {
-  z-index: -1;
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #191919;
-  left: 0;
-  top: 0;
-  border-radius: 10px;
-}
-   
+    /* Button Styling */
+    .button {
+      background-color: #8700ff;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 10px;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+
+    /* Interactive Slideshow */
+    .slideshow-container {
+      position: relative;
+      max-width: 800px;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      background: gold;
+      overflow: hidden;
+    }
+
+    .slideshow-container img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      margin-top: -22px;
+      padding: 10px;
+      color: black;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      user-select: none;
+    }
+
+    .next {
+      right: 0;
+    }
+
+    .prev {
+      left: 0;
+    }
+
+    .prev:hover, .next:hover {
+      color: white;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 50%;
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #04AA6D;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 18px;
+      padding: 10px 15px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      display: none;
+    }
+
+    .back-to-top:hover {
+      background-color: #333;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
   </style>
 </head>
-
 <body>
 
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="#home" class="active">Home</a>
+    <a href="#journey">Journey</a>
+    <a href="#steam">Steam</a>
+    <a href="#yaguai">Yāoguài</a>
+    <a href="#media">Media</a>
+  </div>
 
-     <h1 style="font-size:60px;">Wukong - The Victorious Fighting Buddha</h1>
-     <a href="/" class="bn5">Yaguais</a><a href="/" class="bn5">Influences</a><a href="/" class="bn5">The Journey</a>
-     <h1>
-     
-     Click to access Wukong on Steam!
-     </h1>
-     
-<a href="https://store.steampowered.com/app/2358720/Black_Myth_Wukong/" class="button">Steam</a>
-<br><br>
-<img src="https://upload.wikimedia.org/wikipedia/en/a/a6/Black_Myth_Wukong_cover_art.jpg">
-<h1>
-     Journey to the West
-     </h1>
-<p>
-Journey to the West (Chinese: 西遊記; pinyin: Xīyóu Jì) is a Chinese novel published in the 16th century during the Ming dynasty and attributed to Wu Cheng'en. It is regarded as one of the great Chinese novels, and has been described as arguably the most popular literary work in East Asia.[2] It is widely known in English-speaking countries through Arthur Waley's 1942 abridged translation, Monkey.<br><br>
+  <!-- Content -->
+  <div id="home" class="content">
+    <h1>Wukong - The Victorious Fighting Buddha</h1>
+    <p>Discover the legend of Wukong, inspired by one of the greatest tales in Chinese mythology, <em>Journey to the West</em>. Explore his story, influences, and the incredible new game <strong>Black Myth: Wukong</strong>.</p>
+    <a href="https://store.steampowered.com/app/2358720/Black_Myth_Wukong/" class="button">Play on Steam</a>
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/a6/Black_Myth_Wukong_cover_art.jpg" alt="Black Myth Wukong Cover Art">
+  </div>
 
-The novel is a fictionalized and fantastic account of the pilgrimage of the Chinese Buddhist monk Xuanzang, who journeyed to India in the 7th century AD to seek out and collect Buddhist scriptures (sūtras).[3] The novel retains the broad outline of Xuanzang's own account, Great Tang Records on the Western Regions, but embellishes it with fantasy elements from folk tales and the author's invention. In the story, the Buddha tasks the monk Tang Sanzang (or "Tripitaka"), with journeying to India and provides him with three protectors who agree to help him in order to atone for their sins: Sun Wukong (the "Monkey King"), Zhu Bajie, and Sha Wujing. Riding a White Dragon Horse, the monk and his three protectors journey to a mythical version of India and enlightenment through the power and virtue of cooperation.<br><br>
+  <div id="journey" class="content">
+    <h2>Journey to the West</h2>
+    <p>
+      <em>Journey to the West</em> is a Chinese novel published in the 16th century during the Ming dynasty. It follows the Buddhist monk Xuanzang as he journeys to India to collect Buddhist scriptures, accompanied by the mythical Monkey King, Sun Wukong. The novel is a blend of mythology, philosophy, and adventure, reflecting enduring Chinese cultural attitudes and beliefs.
+    </p>
+  </div>
 
-Journey to the West has strong roots in Chinese folk religion, Chinese mythology, Chinese Buddhism, Confucianism, Taoist and Buddhist folklore, and the pantheon of Taoist immortals and Buddhist bodhisattvas are still reflective of certain Chinese religious attitudes today, while being the inspiration of many modern manhwa, manhua, manga and anime series. Enduringly popular,[4] the novel is at once a comic adventure story, a humorous satire of Chinese bureaucracy, a source of spiritual insight, and an extended allegory.
-</p>
+  <!-- Yāoguài Section -->
+  <div id="yaguai" class="content">
+    <h2>Yāoguài: Wukong's Rivals</h2>
+    <p>Wukong's journey was marked by battles against mythical demons (Yāoguài). Here are some of the most notable foes he encountered:</p>
+    <div class="slideshow-container">
+      <img class="yaguai-slides" src="https://static1.dualshockersimages.com/wordpress/wp-content/uploads/2024/09/untitled-design-2024-09-05t140604-232.jpg" alt="White Bone Demon">
+      <img class="yaguai-slides" src="https://www.destructoid.com/wp-content/uploads/2024/08/black-myth-wukong-white-clad-noble-featured.jpg" alt="Golden Winged Peng">
+      <img class="yaguai-slides" src="https://cdn.gameleap.com/images/articles/art_ZVufN1Qf9P/feature/1x.webp" alt="Red Boy">
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+  </div>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/u83VdXAVq08?si=axldv0FfLNz_wFDq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <div id="media" class="content">
+    <h2>Media</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/u83VdXAVq08" title="Black Myth: Wukong Gameplay" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+  </div>
 
-<iframe src="https://giphy.com/embed/JQ6G9GuFuAf7j1v1fR" width="480" height="269" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/NVIDIA-GeForce-nvidia-rtx-geforce-JQ6G9GuFuAf7j1v1fR"></a></p>
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" title="Go to top">↑</button>
 
-<a href="https://me.ign.com/ar/black-myth-wukong/177432/review/mrj-black-myth-wukong"><button class="bn632-hover bn20">Reviews</button></a>
+  <script>
+    // Slideshow
+    let slideIndex = 1;
+    showSlides(slideIndex);
 
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+      let slides = document.getElementsByClassName("yaguai-slides");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex - 1].style.display = "block";
+    }
+
+    // Back to Top Button
+    const backToTopButton = document.getElementById("backToTop");
+
+    window.onscroll = () => {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopButton.style.display = "block";
+      } else {
+        backToTopButton.style.display = "none";
+      }
+    };
+
+    backToTopButton.onclick = () => {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    };
+  </script>
 
 </body>
-
 </html>
